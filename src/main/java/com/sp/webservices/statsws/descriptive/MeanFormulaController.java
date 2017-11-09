@@ -17,7 +17,6 @@ public class MeanFormulaController {
 	@GET
 	@Path("/mean")
 	public Double mean(@QueryParam("values") String values) {
-		System.out.println(values);
 		String [] valueArr = StringUtils.split(values, ',');
 		OptionalDouble mean = Arrays.stream(valueArr).mapToDouble( x-> Double.parseDouble(x)).average();
 		return mean.getAsDouble();

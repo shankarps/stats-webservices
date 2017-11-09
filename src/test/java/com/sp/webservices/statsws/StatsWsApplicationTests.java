@@ -1,4 +1,4 @@
-package com.sp.webservices.StatsWS;
+package com.sp.webservices.statsws;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
