@@ -1,4 +1,4 @@
-package com.sp.webservices.StatsWS;
+package com.sp.webservices.statsws;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
