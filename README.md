@@ -4,40 +4,44 @@ This is a REST based webservice to calculate statistical functions for input val
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Install Git, Java 8, Maven and any IDE of your choice (Eclipse, IntelliJ, etc)
 
 ### Prerequisites
 
-Java 8, Maven should be installed.
+Git, Java 8, Maven should be installed.
 
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+Check out the source code
 
 ```
-Give the example
+git clone https://github.com/shankarps/stats-webservices.git
 ```
 
-And repeat
+Compile and run the project
 
 ```
-until finished
+$mvn clean install spring-boot:run
 ```
+Test the service with a browser or REST client
 
-End with an example of getting some data out of the system or using it for a little demo
+```
+$wget http://localhost:8080/statistics/v1/calculate?values=1,2,3,4,5,6.1,33
+
+```
 
 ## Running the tests
 
+TODO
 
 
 ## Deployment
 
+This webservice is ready to use.
 This webservice is deployed in the Pivotal Cloud Foundry for usage.
 
-Sample URL - http://stats-ws.cfapps.io/v1/statistics/mean?values=1,2,3,4
+Public URL - http://services.web-util.com/statistics/v1/calculate?values=1,2,3,4,5,6
 
 ## Built With
 
