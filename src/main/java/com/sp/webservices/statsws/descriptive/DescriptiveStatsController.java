@@ -1,8 +1,5 @@
 package com.sp.webservices.statsws.descriptive;
 
-import java.util.Arrays;
-import java.util.OptionalDouble;
-
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -14,15 +11,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.sp.webservices.statsws.calculator.CountCalculator;
-import com.sp.webservices.statsws.calculator.StatisticsCalculator;
-import com.sp.webservices.statsws.model.*;
+import com.sp.webservices.statsws.calculator.MeanCalculator;
+import com.sp.webservices.statsws.calculator.MedianCalculator;
+import com.sp.webservices.statsws.model.Stats;
 
 @Component
-@Path("statistics/v1")
+@Path("/v1")
 public class DescriptiveStatsController {
 
 	@Autowired
-	StatisticsCalculator meanCanculator;
+	MeanCalculator meanCanculator;
+	
+	@Autowired
+	MedianCalculator medianCalculator;
 	
 	@Autowired
 	CountCalculator counter;
@@ -38,6 +39,8 @@ public class DescriptiveStatsController {
 		stats.setMean(meanCanculator.calculate(valueArr));
 		
 		stats.setSize(counter.count(valueArr));
+		
+		stats.setMedian(medianCalculator.calculate(valueArr));
 		
 		return stats;
 	}

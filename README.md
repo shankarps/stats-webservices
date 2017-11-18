@@ -16,7 +16,7 @@ Git, Java 8, Maven should be installed.
 Check out the source code
 
 ```
-git clone https://github.com/shankarps/stats-webservices.git
+$git clone https://github.com/shankarps/stats-webservices.git
 ```
 
 Compile and run the project
@@ -41,7 +41,7 @@ TODO
 This webservice is ready to use.
 This webservice is deployed in the Pivotal Cloud Foundry for usage.
 
-Public URL - http://services.web-util.com/statistics/v1/calculate?values=1,2,3,4,5,6
+Public URL - http://stats.web-util.com/v1/calculate?values=1,2,3,4,5,6.1,33
 
 ## Built With
 
