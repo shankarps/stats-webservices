@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import com.sp.webservices.statsws.calculator.CountCalculator;
 import com.sp.webservices.statsws.calculator.MeanCalculator;
 import com.sp.webservices.statsws.calculator.MedianCalculator;
+import com.sp.webservices.statsws.calculator.StdDevCalculator;
 import com.sp.webservices.statsws.model.Stats;
 
 @Component
@@ -28,6 +29,9 @@ public class DescriptiveStatsController {
 	@Autowired
 	CountCalculator counter;
 	
+	@Autowired
+	StdDevCalculator stdCalculator;
+	
 	@GET
 	@Path("/calculate")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -41,6 +45,8 @@ public class DescriptiveStatsController {
 		stats.setSize(counter.count(valueArr));
 		
 		stats.setMedian(medianCalculator.calculate(valueArr));
+		
+		stats.setStdDev(stdCalculator.calculate(valueArr));
 		
 		return stats;
 	}

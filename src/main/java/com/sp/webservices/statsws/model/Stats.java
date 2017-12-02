@@ -13,7 +13,6 @@ public class Stats {
 	@JsonPropertyDescription("This is the size of the sample")
 	private int size;
 	private double median;
-	private double mode;
 	private double stdDev;
 
 	
@@ -42,14 +41,6 @@ public class Stats {
 		this.median = median;
 	}
 
-	public double getMode() {
-		return mode;
-	}
-
-	public void setMode(double mode) {
-		this.mode = mode;
-	}
-
 	public double getStdDev() {
 		return stdDev;
 	}
@@ -60,7 +51,7 @@ public class Stats {
 
 	@Override
 	public String toString() {
-		return "Stats [mean=" + mean + ", size=" + size + ", median=" + median + ", mode=" + mode + ", stdDev=" + stdDev
+		return "Stats [mean=" + mean + ", size=" + size + ", median=" + median + ", stdDev=" + stdDev
 				+ "]";
 	}
 

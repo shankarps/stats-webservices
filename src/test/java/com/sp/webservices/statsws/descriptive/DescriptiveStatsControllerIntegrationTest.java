@@ -23,7 +23,6 @@ public class DescriptiveStatsControllerIntegrationTest {
 	@Test
 	public void desctritiveCalcTest() {
 		Stats response = restTemplate.getForObject("/v1/calculate?values=1.5,2.5,3.5,4,5", Stats.class);
-		System.out.println(response);
 		
 		assertNotNull(response);
 		assertThat(response.getSize()).isEqualTo(5);
