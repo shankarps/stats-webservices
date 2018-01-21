@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/shankarps/stats-webservices.svg?branch=master)](https://travis-ci.org/shankarps/stats-webservices)
+
 # Statistics webservice
 
 This is a REST based webservice to calculate statistical functions for input values.
